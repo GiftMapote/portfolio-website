@@ -1,7 +1,7 @@
 "use client";
 
 import AnimatedSection from "./AnimatedSection";
-import { Mail, Phone, Linkedin, Github, MapPin } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -16,7 +16,7 @@ export default function Contact() {
           </p>
         </AnimatedSection>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatedSection delay={0.1}>
             <a
               href="mailto:giftmappte@gmail.com"
@@ -33,20 +33,6 @@ export default function Contact() {
 
           <AnimatedSection delay={0.2}>
             <a
-              href="tel:+27635864151"
-              className="group p-6 bg-dark-800 border border-dark-700 rounded-xl flex flex-col items-center text-center hover:border-primary-500/50 transition-all"
-            >
-              <Phone
-                size={28}
-                className="text-primary-400 mb-3 group-hover:scale-110 transition-transform"
-              />
-              <h3 className="text-white font-medium text-sm mb-1">Phone</h3>
-              <p className="text-gray-400 text-xs">063 586 4151</p>
-            </a>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.3}>
-            <a
               href="https://linkedin.com/in/gift-mapote-6193801b0"
               target="_blank"
               rel="noopener noreferrer"
@@ -61,7 +47,7 @@ export default function Contact() {
             </a>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.4}>
+          <AnimatedSection delay={0.3}>
             <a
               href="https://github.com/GiftMapote"
               target="_blank"
