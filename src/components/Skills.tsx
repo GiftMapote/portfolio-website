@@ -8,7 +8,7 @@ interface Skill {
   customIcon?: string;
 }
 
-const topRow: Skill[] = [
+const allSkills: Skill[] = [
   { name: "Apache Spark", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" },
   { name: "Databricks", icon: "https://www.vectorlogo.zone/logos/databricks/databricks-icon.svg" },
   { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" },
@@ -18,9 +18,6 @@ const topRow: Skill[] = [
   { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
   { name: "Hadoop", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hadoop/hadoop-original.svg" },
   { name: "Hive", icon: "https://www.vectorlogo.zone/logos/apache_hive/apache_hive-icon.svg" },
-];
-
-const bottomRow: Skill[] = [
   { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
   { name: "Bitbucket", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" },
   { name: "Bamboo", icon: "https://www.vectorlogo.zone/logos/atlassian_bamboo/atlassian_bamboo-icon.svg" },
@@ -34,7 +31,7 @@ const bottomRow: Skill[] = [
 
 function SkillCard({ skill }: { skill: Skill }) {
   return (
-    <div className="flex flex-col items-center justify-center px-8 py-5 bg-dark-900 border border-dark-700 rounded-xl min-w-[120px] hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/10 hover:-translate-y-1 transition-all duration-300 cursor-default">
+    <div className="flex flex-col items-center justify-center p-4 bg-dark-900 border border-dark-700 rounded-xl hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/10 hover:-translate-y-1 transition-all duration-300 cursor-default">
       <div className="w-10 h-10 mb-2 flex items-center justify-center">
         {skill.icon ? (
           <img
@@ -48,41 +45,9 @@ function SkillCard({ skill }: { skill: Skill }) {
           </div>
         )}
       </div>
-      <span className="text-xs text-gray-400 font-medium text-center whitespace-nowrap">
+      <span className="text-xs text-gray-400 font-medium text-center">
         {skill.name}
       </span>
-    </div>
-  );
-}
-
-function Marquee({
-  skills,
-  direction = "left",
-  speed = 30,
-}: {
-  skills: Skill[];
-  direction?: "left" | "right";
-  speed?: number;
-}) {
-  // Duplicate the array to create seamless loop
-  const duplicated = [...skills, ...skills];
-
-  return (
-    <div className="relative overflow-hidden w-full group">
-      {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-dark-800/100 to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-dark-800/100 to-transparent z-10 pointer-events-none" />
-
-      <div
-        className={`flex gap-4 w-max ${
-          direction === "left" ? "animate-marquee-left" : "animate-marquee-right"
-        } group-hover:[animation-play-state:paused]`}
-        style={{ animationDuration: `${speed}s` }}
-      >
-        {duplicated.map((skill, idx) => (
-          <SkillCard key={`${skill.name}-${idx}`} skill={skill} />
-        ))}
-      </div>
     </div>
   );
 }
@@ -100,9 +65,10 @@ export default function Skills() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <div className="space-y-6">
-            <Marquee skills={topRow} direction="left" speed={35} />
-            <Marquee skills={bottomRow} direction="right" speed={40} />
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-4">
+            {allSkills.map((skill) => (
+              <SkillCard key={skill.name} skill={skill} />
+            ))}
           </div>
         </AnimatedSection>
       </div>
