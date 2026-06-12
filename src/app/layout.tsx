@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Data Engineer with 3+ years of experience designing scalable data pipelines, cloud-based data platforms, and data models in high-volume banking environments.",
   icons: {
-    icon: "/favicon.png",
+    icon: "/icon",
   },
 };
 
