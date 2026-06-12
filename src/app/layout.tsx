@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Gift Mapote | Data Engineer",
   description:
     "Data Engineer with 3+ years of experience designing scalable data pipelines, cloud-based data platforms, and data models in high-volume banking environments.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
