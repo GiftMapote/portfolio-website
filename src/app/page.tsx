@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import PipelineAnimation from "@/components/PipelineAnimation";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
@@ -14,6 +15,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <PipelineAnimation />
       <About />
       <Skills />
       <Projects />

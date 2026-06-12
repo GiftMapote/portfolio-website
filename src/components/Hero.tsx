@@ -102,7 +102,7 @@ export default function Hero() {
               {/* Profile image */}
               <div className="relative w-72 h-96 md:w-80 md:h-[28rem] lg:w-96 lg:h-[32rem] rounded-2xl overflow-hidden border-2 border-primary-500/30 shadow-2xl shadow-primary-500/10">
                 <img
-                  src="/1781217992131.jpeg"
+                  src="/profile.png"
                   alt="Gift Mapote"
                   className="w-full h-full object-cover object-top"
                 />
