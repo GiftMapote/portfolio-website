@@ -18,10 +18,10 @@ export default function Home() {
       <PipelineAnimation />
       <About />
       <Skills />
+      <Certifications />
       <Projects />
       <Experience />
       <Education />
-      <Certifications />
       <Contact />
       <Footer />
     </main>
