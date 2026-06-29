@@ -5,10 +5,22 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
+    role: "Tech Engineer",
+    company: "Monocle Solutions",
+    logo: "/monocle_solutions_logo.jpeg",
+    period: "2026 – Present",
+    location: "South Africa",
+    responsibilities: [
+      "Delivering technology consulting and engineering solutions for financial services clients",
+      "Designing and implementing scalable technical architectures aligned with business objectives",
+      "Collaborating with cross-functional teams to drive digital transformation initiatives",
+    ],
+  },
+  {
     role: "Data Engineer",
     company: "First National Bank",
     logo: "/fnbLogo.webp",
-    period: "Jan 2023 – Present",
+    period: "Jan 2023 – 2026",
     location: "South Africa",
     responsibilities: [
       "Designed, built, and maintained scalable data pipelines and cloud-based data platforms using Apache Spark and AWS services",
